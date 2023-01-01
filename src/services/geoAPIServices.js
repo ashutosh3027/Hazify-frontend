@@ -1,8 +1,8 @@
 import API from "../utils/Axios";
 class GeoApiServices {
-    async getCoordinates(location, limit){
+    async getCoordinates(location){
         console.log(process.env);
-       return await API.get(`direct?q=${location}&limit=${limit}&appid=${process.env.REACT_APP_APPID}`);
+       return await API.get(`/api/v1/whether/requestRoute?q=${location}`);
     }
 }
 export default new GeoApiServices();
